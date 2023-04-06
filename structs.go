@@ -235,3 +235,53 @@ type RAW []byte
 func (r RAW) class() string {
 	return "RAW"
 }
+
+type SUBFRAME struct {
+	Class  string `json:"class"`
+	Device string `json:"device"`
+	GnssId int    `json:"gnssId"`
+	TSV    int    `json:"tSV"`
+	TOW17  int    `json:"TOW17"`
+	Frame  int    `json:"frame,omitempty"`
+	Scaled bool   `json:"scaled"`
+}
+
+func (r *SUBFRAME) class() string {
+	return r.Class
+}
+
+type RTCM2 struct {
+	Class         string  `json:"class"`
+	Type          int     `json:"type"`
+	StationId     int     `json:"station_id"`
+	Zcount        float64 `json:"zcount"`
+	Seqnum        int     `json:"seqnum"`
+	Length        int     `json:"length"`
+	StationHealth int     `json:"station_health"`
+	X             float64 `json:"x,omitempty"`
+	Y             float64 `json:"y,omitempty"`
+	Z             float64 `json:"z,omitempty"`
+	Satellites    []struct {
+		Ident      int  `json:"ident"`
+		Iodl       bool `json:"iodl"`
+		Health     int  `json:"health"`
+		Snr        int  `json:"snr"`
+		HealthEn   bool `json:"health_en"`
+		NewData    bool `json:"new_data"`
+		LosWarning bool `json:"los_warning"`
+		Tou        int  `json:"tou"`
+	} `json:"satellites,omitempty"`
+	System  string  `json:"system,omitempty"`
+	Sense   int     `json:"sense,omitempty"`
+	Datum   string  `json:"datum,omitempty"`
+	Dx      float64 `json:"dx,omitempty"`
+	Dy      float64 `json:"dy,omitempty"`
+	Dz      float64 `json:"dz,omitempty"`
+	Message string  `json:"message,omitempty"`
+	Ar      string  `json:"ar,omitempty"`
+	Sid     string  `json:"sid,omitempty"`
+}
+
+func (r *RTCM2) class() string {
+	return r.Class
+}
