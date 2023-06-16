@@ -4,7 +4,7 @@
 
 It provides interface similar to the official C, C++ and Python libraries.
 
-Tested with GPSD 3.16, proto version 3.11.
+Tested with GPSD 3.16, proto version 3.11 and GPSD 3.22, proto version 3.14
 
 ## Usage
 

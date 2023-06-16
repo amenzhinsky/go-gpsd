@@ -43,6 +43,8 @@ func TestWatchJSON(t *testing.T) {
 	if _, ok := r.(*VERSION); !ok {
 		t.Fatalf("got %T, want a VERSION report", r)
 	}
+	v := r.(*VERSION)
+	t.Logf("testing GPSD v%s, APIv%d.%d", v.Release, v.ProtoMajor, v.ProtoMinor)
 
 	// DEVICES is received on WATCH_ENABLE
 	r = <-g.C()

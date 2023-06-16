@@ -111,12 +111,12 @@ func (r *ATT) class() string {
 }
 
 type VERSION struct {
-	Class      string  `json:"class"`
-	Release    string  `json:"release"`
-	Rev        string  `json:"rev"`
-	ProtoMajor float64 `json:"proto_major"`
-	ProtoMinor float64 `json:"proto_minor"`
-	Remove     string  `json:"remote,omitempty"`
+	Class      string `json:"class"`
+	Release    string `json:"release"`
+	Rev        string `json:"rev"`
+	ProtoMajor int    `json:"proto_major"`
+	ProtoMinor int    `json:"proto_minor"`
+	Remote     string `json:"remote,omitempty"`
 }
 
 func (r *VERSION) class() string {
