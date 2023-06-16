@@ -45,6 +45,9 @@ type SKY struct {
 	Pdop       float64     `json:"pdop,omitempty"`
 	Gdop       float64     `json:"gdop,omitempty"`
 	Satellites []Satellite `json:"satellites"`
+	PRes       float64     `json:"pres,omitempty"`
+	Qual       int32       `json:"qual,omitempty"`
+	USat       int32       `json:"usat,omitempty"`
 }
 
 func (r *SKY) class() string {
