@@ -55,11 +55,16 @@ func (r *SKY) class() string {
 }
 
 type Satellite struct {
-	PRN  float64 `json:"PRN"`
-	Az   float64 `json:"az"`
-	El   float64 `json:"el"`
-	Ss   float64 `json:"ss"`
-	Used bool    `json:"used"`
+	PRN    float64 `json:"PRN"`
+	Az     float64 `json:"az"`
+	El     float64 `json:"el"`
+	FreqId float64 `json:"freqid,omitempty"`
+	GNSSId float64 `json:"gnssid,omitempty"`
+	Health float64 `json:"health,omitempty"`
+	Ss     float64 `json:"ss"`
+	SigId  float64 `json:"sigid,omitempty"`
+	SVId   float64 `json:"svid,omitempty"`
+	Used   bool    `json:"used"`
 }
 
 type GST struct {
