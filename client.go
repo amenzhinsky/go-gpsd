@@ -316,6 +316,10 @@ func unmarshal(cls string, b []byte) (Report, error) {
 		v = &OSC{}
 	case "DEVICE":
 		v = &DEVICE{}
+	case "SUBFRAME":
+		v = &SUBFRAME{}
+	case "RTCM2":
+		v = &RTCM2{}
 	case "ERROR":
 		v = &ERROR{}
 	default:
